@@ -1,0 +1,14 @@
+C:\Users\227085\source\repos\math\math\bin\Debug\math.exe.config
+C:\Users\227085\source\repos\math\math\bin\Debug\math.exe
+C:\Users\227085\source\repos\math\math\bin\Debug\math.pdb
+C:\Users\227085\source\repos\math\math\obj\Debug\math.csproj.AssemblyReference.cache
+C:\Users\227085\source\repos\math\math\obj\Debug\MainWindow.baml
+C:\Users\227085\source\repos\math\math\obj\Debug\MainWindow.g.cs
+C:\Users\227085\source\repos\math\math\obj\Debug\App.g.cs
+C:\Users\227085\source\repos\math\math\obj\Debug\math_MarkupCompile.cache
+C:\Users\227085\source\repos\math\math\obj\Debug\math.g.resources
+C:\Users\227085\source\repos\math\math\obj\Debug\math.Properties.Resources.resources
+C:\Users\227085\source\repos\math\math\obj\Debug\math.csproj.GenerateResource.cache
+C:\Users\227085\source\repos\math\math\obj\Debug\math.csproj.CoreCompileInputs.cache
+C:\Users\227085\source\repos\math\math\obj\Debug\math.exe
+C:\Users\227085\source\repos\math\math\obj\Debug\math.pdb

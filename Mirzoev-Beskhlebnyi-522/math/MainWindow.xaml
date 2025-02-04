@@ -1,0 +1,101 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="nice" Height="500" Width="650" WindowStartupLocation="CenterScreen"
+        Background="#1E1E1E" FontFamily="Calibri" FontWeight="Medium" FontSize="16"
+        Foreground="White"
+        Closing="Window_Closing">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderThickness="0"
+                Background="Transparent" ToolTip="Система уравнений (картинка).">
+            <Image Name="ImageControl" Stretch="UniformToFill" Margin="10"/>
+        </Border>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
+            <TextBlock Text="x:" VerticalAlignment="Center" Width="30" ToolTip="Введите значение X."/>
+            <TextBox Name="InputX" Width="150" Height="30" Padding="5" Background="#333333" Foreground="White"
+                     BorderBrush="#444444" ToolTip="Введите числовое значение для X."/>
+            <TextBlock Text="p:" VerticalAlignment="Center" Width="30" Margin="20,0,0,0" ToolTip="Введите значение P."/>
+            <TextBox Name="InputP" Width="150" Height="30" Padding="5" Background="#333333" Foreground="White"
+                     BorderBrush="#444444" ToolTip="Введите числовое значение для P."/>
+        </StackPanel>
+
+        <ComboBox Name="SelectFValue" Grid.Row="2" Margin="0,20,0,0" Height="40" Width="350" 
+                  HorizontalAlignment="Center" SelectedIndex="0" ToolTip="Выберите математическую функцию для f(x).">
+            <ComboBox.Resources>
+
+                <Style TargetType="ComboBox">
+                    <Setter Property="Background" Value="#1E1E1E"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="BorderBrush" Value="#1E1E1E"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="Padding" Value="8"/>
+                </Style>
+
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Background" Value="#333333"/>
+                    <Setter Property="BorderBrush" Value="#333333"/>
+
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Padding" Value="10"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Style.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#333333"/>
+                        </Trigger>
+
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="#000000"/>
+                            <Setter Property="Foreground" Value="#1E1E1E"/>
+                        </Trigger>
+
+                    </Style.Triggers>
+                </Style>
+
+            </ComboBox.Resources>
+
+            <ComboBoxItem Content="sh(x)" ToolTip="Гиперболический синус X"/>
+            <ComboBoxItem Content="x^2" ToolTip="Квадрат X"/>
+            <ComboBoxItem Content="e^x" ToolTip="Экспонента X"/>
+        </ComboBox>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
+            <Button Name="BtnClear" Content="Очистить" Width="160" Height="40" Background="#E63946" Foreground="White" FontWeight="Bold"
+                    Click="BtnClear_Click" BorderThickness="0" Cursor="Hand" ToolTip="Очистить все поля ввода.">
+
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="4"/>
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+            <Button Name="BtnCalculate" Content="Вычислить" Width="160" Height="40" Background="#457B9D" Foreground="White" FontWeight="Bold"
+                    Margin="20,0,0,0" Click="BtnCalculate_Click" BorderThickness="0" Cursor="Hand" ToolTip="Вычислить результат на основе введенных данных.">
+
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="4"/>
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+        </StackPanel>
+
+        <TextBlock Name="OutputResult" Grid.Row="4" FontSize="20" Foreground="#A8DADC"
+                   HorizontalAlignment="Center" Margin="0,20,0,0"
+                   Text="Результат: " 
+                   ToolTip="Здесь отображается результат вычисления."
+        />
+    </Grid>
+</Window>
